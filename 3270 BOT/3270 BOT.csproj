@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E8CEEF3-0DD1-4A01-8DF7-844C5F8DF5FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>_3270_BOT</RootNamespace>
+    <AssemblyName>3270 BOT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoItX.Dotnet.3.3.14.5\lib\AutoItX3.Assembly.dll</HintPath>
+    </Reference>
+    <Reference Include="CITPRO.Linq.LinqToOdbc, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToOdbc.1.0.0.6\lib\CITPRO.Linq.LinqToOdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharp.Odbc, Version=1.0.4.1, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharp.Odbc.1.0.4.1\lib\net45\CSharp.Odbc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Outlook.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=1.13.111.1, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.1.13.111\lib\net35\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BTChecking.cs" />
+    <Compile Include="CXChecking.cs" />
+    <Compile Include="DAIChecking.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralEmail.cs" />
+    <Compile Include="ODBCConnection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-gifmaker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rrobot %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pepper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RHB Bank New 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pepper1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets" Condition="Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets'))" />
+  </Target>
+</Project>
